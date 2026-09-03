@@ -1,0 +1,32 @@
+  df = [f_eval - f0 for f_eval in f_evals]
+joint fit: 2336 quasars in 18 bins (w=0.03); dropped 85 in sparse bins
+  across-bin slope d<logL_UV>/dz = 0.670 dex per unit z; corr=0.982
+
+[A/B] joint likelihood, 3 models
+  const: g0=0.5777 s=+0.0003 delta=0.2240  -lnL=-93.98 AIC=-147.96 BIC=-32.84
+  z    : g0=0.5835 s=-0.0442 delta=0.2236  -lnL=-97.64 AIC=-153.28 BIC=-32.40
+  L    : g0=0.6075 s=-0.0691 delta=0.2236  -lnL=-98.17 AIC=-154.34 BIC=-33.46
+  LR test const vs z: 2dlnL=7.32 -> p=0.0068  (2.7 sigma-equiv)
+  emcee on gamma(z) model ...
+  gamma0(z=1.3)=0.5824 +0.0117 -0.0111 | m=-0.0415 +0.0161 -0.0173 | delta=0.2248
+  P(m>=0) = 0.0034; 95% upper bound on |m| if m<0: 0.0699
+  bootstrap sigma_m = 0.0087
+  group-5 only (N=1619): m=-0.0610 +- 0.0089, g0=0.5780, delta=0.2184
+
+[C] within-bin quadratic curvature (cosmology-free) vs curvature needed to mimic the drift
+  12 bins with N>=100: weighted q = +0.0210 +- 0.0140  -> d(gamma)/d(logL) within bins = 2q = +0.0420 +- 0.0280
+  to mimic m=-0.0415/z with d<L>/dz=0.670: need d(gamma)/d(logL) = -0.0620
+  tension between measured and needed curvature: 3.7 sigma
+
+[D] truncated-Gaussian likelihood: y > ylim_i (per-bin X-ray flux floor)
+  floor=p0: mean(gamma_trunc - gamma_plain)=+0.0071; m_plain=-0.0525+-0.0197  m_trunc=-0.0564+-0.0197
+  floor=p1: mean(gamma_trunc - gamma_plain)=+0.0220; m_plain=-0.0332+-0.0193  m_trunc=-0.0397+-0.0193
+  floor=p3: mean(gamma_trunc - gamma_plain)=+0.0429; m_plain=-0.0471+-0.0225  m_trunc=-0.0592+-0.0225
+  fraction of bin within 0.3 dex of its X-ray floor, low->high z: [0.22, 0.06, 0.06, 0.02, 0.02, 0.04, 0.06, 0.01, 0.02, 0.06, 0.03, 0.04, 0.05, 0.04, 0.02, 0.02, 0.13, 0.26]
+
+[E] gamma(z) with a Gamma_X term: logF_X = gamma u + c (Gamma_X - 2.175) + beta_i
+  gamma0=0.5776  m=-0.0605+-0.0095  c_Gamma=-0.3257+-0.0105 dex/unit  delta=0.2100 (was 0.2236)
+  within-bin corr(F_UV, Gamma_X): mean=-0.050, range -0.17..+0.11
+
+saved analysis4_results.json
+EXIT=0
