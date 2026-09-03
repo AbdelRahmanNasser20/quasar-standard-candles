@@ -1,0 +1,6 @@
+  df = [f_eval - f0 for f_eval in f_evals]
+group5 z-model: N=1619 K=18 g0=0.5786+-0.0146 m=-0.0595+-0.0209 delta=0.2197 P(m>=0)=0.0024
+all, z-model + Gamma_X term: N=2336 K=18 g0=0.5777+-0.0112 m=-0.0627+-0.0152 delta=0.2113 P(m>=0)=0.0000 c=-0.3258+-0.0187
+z>0.7 only (Risaliti+26 range): N=1972 K=14 g0=0.5680+-0.0139 m=-0.0222+-0.0187 delta=0.2225 P(m>=0)=0.1262
+saved
+EXIT=0
