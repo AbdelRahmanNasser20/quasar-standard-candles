@@ -19,8 +19,9 @@ paperN___short-title/       one folder per paper, N = paper number
   results/*.log             raw stdout of the analysis runs
   code/*.py                 the scripts that produced results/ from data/
   data/                     the input catalog(s), downloaded from public archives
-  REVIEW.md                 (paper1 only) the audit of the original draft
+  REVIEW.md                 paper1: audit of the original draft; paper2: self-review, referee questions, next steps
 manifest.json               index of all of the above
+WHERE-WE-ARE.md             two-page narrative: what happened, what was found, what to do next
 AGENT.md                    this file
 ```
 
@@ -37,5 +38,5 @@ AGENT.md                    this file
 - If a number in the PDF and a number in `results/` disagree, the JSON wins and the PDF has a typo. Report it as an issue.
 
 ## For Nasser (dad): shortest path
-- Open `paper2___slope-drift-degeneracy/paper.pdf`.
+- Read `WHERE-WE-ARE.md`, then `paper2___slope-drift-degeneracy/paper.pdf`, then both `REVIEW.md` files.
 - Tell your AI: "Clone https://github.com/AbdelRahmanNasser20/quasar-standard-candles and read AGENT.md, then summarise paper2."
