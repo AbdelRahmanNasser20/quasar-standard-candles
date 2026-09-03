@@ -32,9 +32,12 @@
         "results": [
           "repro_results.json",
           "repro2_results.json"
-        ]
+        ],
+        "pdf": "paper.pdf",
+        "original_draft": "paper_Hubble_gamma-30_original-draft-2026-08-03.pdf"
       },
-      "review": "paper1___no-evolution-review/REVIEW.md"
+      "review": "paper1___no-evolution-review/REVIEW.md",
+      "note": "paper.pdf is the ORIGINAL draft under review (Abu Seif, 3 Aug 2026), unmodified; REVIEW.md is the audit of it"
     },
     {
       "id": "paper2",

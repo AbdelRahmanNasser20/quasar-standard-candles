@@ -19,6 +19,7 @@ paperN___short-title/       one folder per paper, N = paper number
   results/*.log             raw stdout of the analysis runs
   code/*.py                 the scripts that produced results/ from data/
   data/                     the input catalog(s), downloaded from public archives
+  paper.pdf (paper1)        the original draft under review, unmodified
   REVIEW.md                 paper1: audit of the original draft; paper2: self-review, referee questions, next steps
 manifest.json               index of all of the above
 WHERE-WE-ARE.md             two-page narrative: what happened, what was found, what to do next
