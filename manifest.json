@@ -1,0 +1,73 @@
+{
+  "repository": "https://github.com/AbdelRahmanNasser20/quasar-standard-candles",
+  "updated": "2026-09-03",
+  "naming_rule": "paperN___short-title/ — N is the paper number; read paper.pdf first, results/*.json for every number",
+  "authors": ["Nasser Abu Seif (NRIAG, Cairo)", "Abdel-Rahman Nasser (Phoenix, AZ)"],
+  "data_source": {
+    "catalog": "Lusso et al. 2020, A&A 642, A150, table 3",
+    "vizier": "J/A+A/642/A150",
+    "download_url": "https://vizier.cds.unistra.fr/viz-bin/asu-tsv?-source=J/A%2BA/642/A150/table3&-out.max=unlimited&-out=z,logFUV,e_logFUV,logFX,e_logFX,Group,gammax,e_gammax,DM,e_DM",
+    "rows": 2421,
+    "local_copy": "paper2___slope-drift-degeneracy/data/lusso2020.tsv"
+  },
+  "papers": [
+    {
+      "id": "paper1",
+      "folder": "paper1___no-evolution-review/",
+      "title": "Audit of 'No Evidence for Redshift Evolution of the LX-LUV Relation from 2421 Quasars' (Abu Seif 2026 draft)",
+      "status": "done",
+      "date": "2026-09-03",
+      "entry_point": "paper1___no-evolution-review/REVIEW.md",
+      "verdict": "core idea sound (novelty 3/10); headline m=-0.002+-0.007 not reproducible (real narrow-bin drift m=-0.048+-0.017); not publishable without rewrite",
+      "files": {
+        "review": "REVIEW.md",
+        "figure": "gamma_vs_z.png",
+        "code": ["repro.py", "repro2.py"],
+        "results": ["repro_results.json", "repro2_results.json"]
+      }
+    },
+    {
+      "id": "paper2",
+      "folder": "paper2___slope-drift-degeneracy/",
+      "title": "Is a flat gamma(z) enough? Redshift, luminosity and selection degeneracies in the quasar LX-LUV slope, and what they cost the Hubble diagram",
+      "status": "draft v1",
+      "date": "2026-09-03",
+      "entry_point": "paper2___slope-drift-degeneracy/paper.pdf",
+      "also": "paper2___slope-drift-degeneracy/paper.md",
+      "headline_numbers": {
+        "gamma0_at_z1.3": [0.582, 0.011],
+        "m_dgamma_dz": {"median": -0.042, "plus": 0.016, "minus": 0.017, "P_m_ge_0": 0.0034, "abs_95pct_bound": 0.070},
+        "delta_intrinsic_dex": 0.225,
+        "LR_test_const_vs_z": {"2dlnL": 7.32, "p": 0.0068},
+        "dAIC_z_minus_L": 1.06,
+        "collinearity_r_z_vs_logLUV": 0.982,
+        "dlogLUV_dz_dex": 0.670,
+        "within_shell_curvature_2q": [0.042, 0.028],
+        "curvature_needed_to_mimic_drift": -0.062,
+        "curvature_tension_sigma": 3.7,
+        "m_z_gt_0.7": [-0.022, 0.019],
+        "m_group5_only": [-0.060, 0.021],
+        "m_with_photon_index_term": [-0.063, 0.015],
+        "c_photon_index_dex_per_unit": [-0.326, 0.019],
+        "distance_bias_z2_bestfit_mag": -0.56,
+        "distance_bias_z2_2sigma_mag": -0.91,
+        "sigma_m_required_for_2pct_DL_at_z2": 0.0033
+      },
+      "files": {
+        "source": "paper.tex",
+        "pdf": "paper.pdf",
+        "markdown": "paper.md",
+        "figures": ["figures/fig1_gamma_z.pdf", "figures/fig2_collinearity.pdf", "figures/fig3_curvature.pdf", "figures/fig4_truncation.pdf", "figures/fig5_bias.pdf"],
+        "code": {
+          "analysis3.py": "binned drift vs bin width; collinearity; fixed-L window; full-sample curvature; photon index split; group 5; bias budget (T1-T7)",
+          "analysis4.py": "joint likelihood models C/Z/L + AIC/BIC + emcee; within-shell curvature; truncated-Gaussian fits; Gamma_X term",
+          "analysis5.py": "MCMC errors for group-5, Gamma_X-term and z>0.7 fits",
+          "analysis6.py": "distance-detrended fits; z<0.7 / z>0.7 / group 5 splits"
+        },
+        "results": ["results/analysis3_results.json", "results/analysis4_results.json", "results/analysis5_results.json", "results/analysis6_results.json"],
+        "logs": ["results/analysis3.log", "results/analysis4.log", "results/analysis5.log", "results/analysis6.log"]
+      },
+      "how_to_reproduce": "python3 -m venv qenv && ./qenv/bin/pip install numpy scipy emcee matplotlib; cd paper2___slope-drift-degeneracy/data && for s in 3 4 5 6; do ../../../qenv/bin/python ../code/analysis$s.py; done  (about 25 min)"
+    }
+  ]
+}

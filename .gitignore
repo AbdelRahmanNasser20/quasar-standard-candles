@@ -1,0 +1,7 @@
+qenv/
+__pycache__/
+*.aux
+*.log.latex
+*.out
+*.synctex.gz
+.DS_Store
