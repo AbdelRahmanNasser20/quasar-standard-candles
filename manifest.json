@@ -1,7 +1,7 @@
 {
   "repository": "https://github.com/AbdelRahmanNasser20/quasar-standard-candles",
-  "updated": "2026-09-03",
-  "naming_rule": "paperN___short-title/ \u2014 N is the paper number; read paper.pdf first, results/*.json for every number",
+  "updated": "2026-11-09",
+  "naming_rule": "paperN___short-title/ — N is the paper number; read paper.pdf first, results/*.json for every number",
   "authors": [
     "Nasser Abu Seif (NRIAG, Cairo)",
     "Abdel-Rahman Nasser (Phoenix, AZ)"
@@ -125,7 +125,115 @@
       },
       "how_to_reproduce": "python3 -m venv qenv && ./qenv/bin/pip install numpy scipy emcee matplotlib; cd paper2___slope-drift-degeneracy/data && for s in 3 4 5 6; do ../../../qenv/bin/python ../code/analysis$s.py; done  (about 25 min)",
       "review": "paper2___slope-drift-degeneracy/REVIEW.md"
+    },
+    {
+      "id": "paper3",
+      "folder": "paper3___civ-mass-bias/",
+      "title": "How much does C IV bias single-epoch black-hole masses, and does it matter for JWST's early black holes? A re-analysis of SDSS DR7 and DR16Q",
+      "status": "draft v1 (rebuilt from the 'JWST Mass Mirage' draft of Nov 2026)",
+      "date": "2026-11-09",
+      "entry_point": "paper3___civ-mass-bias/paper.md",
+      "also": [
+        "paper3___civ-mass-bias/paper.docx",
+        "paper3___civ-mass-bias/paper.pdf"
+      ],
+      "review": "paper3___civ-mass-bias/REVIEW.md",
+      "original_draft": "paper3___civ-mass-bias/original_draft_2026-11-09.docx",
+      "verdict": "C IV bias real but blueshift-dependent, not a 0.41 dex constant; no z>6 quasar or LRD mass is C IV-based; X-ray estimator not viable. Novelty 4/10.",
+      "headline_numbers": {
+        "dr7_hbeta_mgii": {
+          "N": 12514,
+          "spearman_rho_fwhm": 0.733,
+          "median_mass_offset_dex_fiducial": 0.011,
+          "nmad_dex": 0.247
+        },
+        "dr7_civ_mgii": {
+          "N": 21810,
+          "spearman_rho_fwhm": 0.137,
+          "median_mass_offset_dex_fiducial": -0.02,
+          "median_mass_offset_dex_VO09": 0.163,
+          "nmad_dex": 0.367
+        },
+        "dr7_civ_offset_vs_rel_blueshift_fiducial": {
+          "0-500": -0.146,
+          "1500-2000": 0.259,
+          "2000-3000": 0.438,
+          ">3000": 0.629,
+          "spearman": 0.449
+        },
+        "dr16q_hbeta_mgii": {
+          "N": 80883,
+          "spearman_rho_fwhm": 0.685,
+          "spearman_rho_fwhm_SN10": 0.761,
+          "median_mass_offset_dex": 0.106,
+          "host_corrected": 0.045
+        },
+        "dr16q_civ_mgii": {
+          "N": 230224,
+          "spearman_rho_fwhm": 0.218,
+          "median_mass_offset_dex": -0.191,
+          "nmad_dex": 0.36,
+          "fwhm_ratio_civ_over_mgii": 0.959
+        },
+        "dr16q_civ_offset_vs_rel_blueshift": {
+          "0-500": -0.237,
+          "1500-2000": -0.015,
+          "2000-3000": 0.028,
+          ">3000": 0.137,
+          "spearman": 0.189,
+          "spearman_L46": 0.364
+        },
+        "pairs_hbeta_civ_in_sdss": 0
+      },
+      "files": {
+        "paper": [
+          "paper.md",
+          "paper.docx",
+          "paper.pdf"
+        ],
+        "review": "REVIEW.md",
+        "code": [
+          "code/analysis1_dr7.py",
+          "code/analysis2_dr16q.py"
+        ],
+        "results": [
+          "results/dr7_results.json",
+          "results/dr16q_results.json",
+          "results/dr7_run.log",
+          "results/dr16q_run.log"
+        ],
+        "figures": [
+          "figures/fig1_fwhm_pairs_dr7.png",
+          "figures/fig2_mass_pairs_dr7.png",
+          "figures/fig3_civ_offset_vs_blueshift_dr7.png",
+          "figures/fig1_fwhm_pairs_dr16q.png",
+          "figures/fig2_mass_pairs_dr16q.png",
+          "figures/fig3_civ_offset_vs_blueshift_dr16q.png"
+        ],
+        "literature_checks": [
+          "notes/litcheck_civ.md",
+          "notes/litcheck_z6_quasars.md",
+          "notes/litcheck_lrd.md"
+        ]
+      },
+      "reproduce": "cd paper3___civ-mass-bias/data && curl -O <both download_url>; gunzip -k dr16q_prop_May01_2024.fits.gz; cd ../code && ../../qenv/bin/python analysis1_dr7.py && ../../qenv/bin/python analysis2_dr16q.py  (needs astropy; ~5 min)"
     }
   ],
-  "where_we_are": "WHERE-WE-ARE.md"
+  "where_we_are": "WHERE-WE-ARE.md",
+  "data_sources_extra": [
+    {
+      "catalog": "Shen et al. 2011, ApJS 194, 45 (SDSS DR7 quasar properties)",
+      "file": "dr7_bh_Nov19_2013.fits.gz",
+      "bytes": 62749630,
+      "download_url": "http://quasar.astro.illinois.edu/BH_mass/data/catalogs/dr7_bh_Nov19_2013.fits.gz",
+      "local_copy": "paper3___civ-mass-bias/data/ (gitignored; re-download)"
+    },
+    {
+      "catalog": "Wu & Shen 2022, ApJS 263, 42 (SDSS DR16Q quasar properties)",
+      "file": "dr16q_prop_May01_2024.fits.gz",
+      "bytes": 1391052577,
+      "download_url": "http://quasar.astro.illinois.edu/paper_data/DR16Q/dr16q_prop_May01_2024.fits.gz",
+      "local_copy": "paper3___civ-mass-bias/data/ (gitignored; re-download)"
+    }
+  ]
 }

@@ -5,3 +5,6 @@ __pycache__/
 *.out
 *.synctex.gz
 .DS_Store
+paper3___civ-mass-bias/data/*.fits
+paper3___civ-mass-bias/data/*.fits.gz
+paper3___civ-mass-bias/data/*.log
