@@ -1,0 +1,99 @@
+{
+ "coverage": {
+  "Hbeta": {
+   "N": 17687,
+   "z_min": 0.064,
+   "z_p1": 0.16,
+   "z_median": 0.545,
+   "z_p99": 0.875,
+   "z_max": 0.89
+  },
+  "MgII": {
+   "N": 72305,
+   "z_min": 0.35,
+   "z_p1": 0.397,
+   "z_median": 1.334,
+   "z_p99": 2.188,
+   "z_max": 2.25
+  },
+  "CIV": {
+   "N": 39139,
+   "z_min": 1.5,
+   "z_p1": 1.508,
+   "z_median": 1.954,
+   "z_p99": 4.076,
+   "z_max": 4.943
+  }
+ },
+ "pair_counts": {
+  "Hbeta_and_MgII": 12514,
+  "MgII_and_CIV": 21810,
+  "Hbeta_and_CIV": 0,
+  "all_three": 0
+ },
+ "fwhm_Hbeta_vs_MgII": {
+  "N": 12514,
+  "spearman_rho": 0.733,
+  "spearman_p": 0.0,
+  "pearson_r_log": 0.718,
+  "pearson_r_linear": 0.691,
+  "ols_slope_log": 0.856,
+  "ols_intercept_log": 0.562,
+  "bisector_slope_log": 1.182,
+  "ols_resid_scatter_dex": 0.137,
+  "median_ratio_y_over_x": 1.081
+ },
+ "fwhm_CIV_vs_MgII": {
+  "N": 21810,
+  "spearman_rho": 0.137,
+  "spearman_p": 2.032090473953773e-92,
+  "pearson_r_log": 0.138,
+  "pearson_r_linear": 0.165,
+  "ols_slope_log": 0.145,
+  "ols_intercept_log": 3.191,
+  "bisector_slope_log": 1.012,
+  "ols_resid_scatter_dex": 0.154,
+  "median_ratio_y_over_x": 1.172
+ },
+ "mass_Hbeta_vs_MgII_VO09": {
+  "N": 12425,
+  "x": "logM(MgII,VO09)",
+  "y": "logM(Hbeta,VP06)",
+  "median_offset_y_minus_x_dex": 0.075,
+  "mean_offset_dex": 0.109,
+  "std_offset_dex": 0.284,
+  "nmad_offset_dex": 0.239,
+  "p16_offset": -0.139,
+  "p84_offset": 0.352,
+  "frac_y_exceeds_x_by_0p5dex": 0.081,
+  "frac_y_below_x_by_0p5dex": 0.0064,
+  "spearman_rho_masses": 0.758,
+  "ols_slope": 0.828,
+  "ols_intercept": 1.576
+ },
+ "mass_CIV_vs_MgII_VO09": {
+  "N": 21323,
+  "x": "logM(MgII,VO09)",
+  "y": "logM(CIV,VP06)",
+  "median_offset_y_minus_x_dex": 0.163,
+  "mean_offset_dex": 0.15,
+  "std_offset_dex": 0.384,
+  "nmad_offset_dex": 0.348,
+  "p16_offset": -0.2,
+  "p84_offset": 0.505,
+  "frac_y_exceeds_x_by_0p5dex": 0.1636,
+  "frac_y_below_x_by_0p5dex": 0.0482,
+  "spearman_rho_masses": 0.408,
+  "ols_slope": 0.456,
+  "ols_intercept": 5.064
+ },
+ "civ_voff_sign_check": {
+  "median_VOFF_CIV_PEAK_kms": 487.6,
+  "note": "C IV is blueshifted on average in luminous quasars; the sign of the median tells which sign the catalog uses for blueshift."
+ },
+ "civ_offset_blueshift_spearman": {
+  "rho": 0.211,
+  "N": 21323
+ }
+}
+figures written
